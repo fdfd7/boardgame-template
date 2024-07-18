@@ -65,14 +65,14 @@ export const TicTacToe = {
   },
   ai: {
     enumerate: function enumerate(G) {
-      let a = [];
+      let a = [ ];
       for (let i = 0; i <= 8; i = i + 1) {
         if (G.cells[i] == null) {
-          a.push(i);
+          a.push({ move: "clickCell", args:i});
         }
       }
 
-      return [{ move: "clickCell", args: a }];
+      return a;
     },
   },
 };
