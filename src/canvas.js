@@ -1,3 +1,4 @@
+
 const canvas = document.getElementById("canvas");
 
 // { x,y, height, width, handler)
@@ -12,6 +13,7 @@ const handlers = [];
  * @param height height of the clickable area
  * @param handler function to be called when the click event is received
  */
+
 export function onClick(x, y, width, height, handler) {
   handlers.push({
     x,
@@ -43,7 +45,7 @@ canvas.addEventListener(
     if (debug) {
       console.log(`received click on x: ${x}, y: ${y}`);
     }
-    let called = false;
+    let called = true;
 
     // Collision detection between clicked offset and element.
     // Go through all registered handlers and call all that matches the click
@@ -52,7 +54,7 @@ canvas.addEventListener(
         y > element.y &&
         y < element.y + element.height &&
         x > element.x &&
-        x < element.z + element.width
+        x < element.x + element.width
       ) {
         called = true;
         if (debug) {
@@ -70,3 +72,11 @@ canvas.addEventListener(
   },
   false
 );
+
+export function drawPicture(ctx, path, ...args) {
+    const img = new Image();
+    img.onload = function () {
+        ctx.drawImage(img, ...args)
+    }
+    img.src = "/img/" + path
+}

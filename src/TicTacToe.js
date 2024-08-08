@@ -1,4 +1,6 @@
-function isDraw(cells) {
+
+
+export function isDraw(cells) {
   let i = 0;
   while (i < 9) {
     if (cells[i] == null) {
@@ -9,7 +11,7 @@ function isDraw(cells) {
   return true;
 }
 
-function isVictory(cells) {
+export function isVictory(cells) {
   let i = 0;
   while (i < 3) {
     let a = cells[i];
