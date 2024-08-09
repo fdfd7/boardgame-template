@@ -30,7 +30,6 @@ export class GameClient {
   update(state) {
     resetOnClicks()
     ctx.strokeStyle = `rgb(0 0 0)`
-    ctx.fillRect(0,0,800,800)
     let fieldSize=150
     let edgingDistanceFactor = 0.4
     let radius_1= 100
@@ -49,6 +48,7 @@ export class GameClient {
     ctx.stroke()
     ctx.fill()
     ctx.lineWidth = 10
+    
     for(let j=1; j<=2; j++ ){
       ctx.beginPath()
       ctx.moveTo(400+(j-1.5)*fieldSize,400-1.5*fieldSize)
